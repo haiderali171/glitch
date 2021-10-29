@@ -4,6 +4,12 @@ from django.utils.translation import gettext as _
 from .forms import TheForm 
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
+from django.views.decorators.cache import cache_page
+from django.conf import settings
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+
+
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
 class HomePageView(TemplateView):
@@ -18,7 +24,7 @@ class BlogPageView(TemplateView): # new
 
 
 def about(request):
-    return render(request, 'home.html', {'title': _('Rhenium')})
+    return render(request, 'home.html', {'title': _('Haider WEBSITE')})
 
 
 
@@ -31,6 +37,7 @@ def index2(request):
     return render(request, 'index2.html')
 
 
+@cache_page(CACHE_TTL)
 def home(request):
     if request.method == 'POST':
         form = TheForm(request.POST)

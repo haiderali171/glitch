@@ -1,14 +1,13 @@
 {
   "name": "thesite",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Haider Ali",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^5.0.1",
@@ -35,5 +34,10 @@
     "shards-react": "^1.0.3",
     "styled-components": "^5.2.1",
     "to-string-loader": "^1.1.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/haiderdjangoapp.git"
+  },
+  "description": ""
 }
