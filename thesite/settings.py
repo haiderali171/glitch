@@ -272,7 +272,7 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 
 # CACHING
 
-CACHES = {
+"""CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/1",
@@ -281,6 +281,6 @@ CACHES = {
         },
         "KEY_PREFIX": "example"
     }
-}
+}"""
 
 CACHE_TTL = 60 * 15
